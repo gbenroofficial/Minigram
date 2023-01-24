@@ -37,9 +37,24 @@
 .w-44 {
   width: 11rem;
 }
+.h-253 {
+  height: 63.25rem;
+}
+.h-200 {
+  height: 50rem;
+}
+.h-164 {
+  height: 41rem;
+}
+.h-160 {
+  height: 40rem;
+}
+.h-150 {
+  height: 37.5rem;
+}
 .h-173 {
-    height: 43.25rem;
-  }
+  height: 43.25rem;
+}
 .h-100 {
   height: 25rem;
 }
@@ -47,12 +62,20 @@
 .h-95 {
   height: 23.75rem;
 }
-
+.h-90 {
+    height: 22.5rem;
+  }
+.h-26 {
+    height: 6.5rem;
+  }
 .h-18 {
   height: 4.5rem;
 }
 .h-16 {
   height: 4rem;
+}
+.h-11 {
+  height: 2.75rem;
 }
 .h-7 {
   height: 1.75rem;
