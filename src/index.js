@@ -3,11 +3,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import fireContext from "./contexts/firebase";
-import { firebaseApp, db } from "./lib/firebase";
+import { firebase, db } from "./lib/firebase";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <fireContext.Provider value={{ firebaseApp, db }}>
+  <fireContext.Provider value={{ firebase, db }}>
     <App />
   </fireContext.Provider>
 );

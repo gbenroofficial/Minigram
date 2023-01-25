@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 import "firebase/compat/auth";
 // import { collection, addDoc } from "firebase/firestore";
 // eslint-disable-next-line no-unused-vars
@@ -18,9 +19,11 @@ const config = {
 };
 
 //initialize/create instance of firebase app using defined configurations
-const firebaseApp = initializeApp(config);
-
-const db = getFirestore(firebaseApp);
+const firebase = initializeApp(config);
+// eslint-disable-next-line no-unused-vars
+const auth = getAuth(firebase);
+// console.log(auth);
+const db = getFirestore(firebase);
 
 /* try {
   const docRef = addDoc(collection(db, "users"), {
@@ -36,6 +39,6 @@ const db = getFirestore(firebaseApp);
 //seedData into firebase
 // seedData(db);
 
-console.log("db", db);
+// console.log("db", db);
 
-export { firebaseApp, db };
+export { auth, firebase, db };

@@ -1,27 +1,52 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 
-import { React, useState, useHistory } from "react";
-import { Link } from "react-router-dom";
+import { React, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { collection, addDoc } from "firebase/firestore";
+import { db, auth } from "../lib/firebase";
+
 import "../styles/app.css";
 import "../styles/sub.css";
 //import pic from "../../public/images/login_images/1.png";
 const Signup = () => {
-  //   const history = useHistory();
   //   const { firebase } = useContext(FirebaseContext);
-
+  const navigate = useNavigate();
   const [emailAddress, setEmailAddress] = useState("");
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [error, setError] = useState("");
   /*  const [error, setError] = useState("");
   const isInvalid = password === "" || emailAddress === ""; */
 
-  const handleSignup = () => {};
+  //   const auth = getAuth();
+  const handleSignup = (e) => {
+    e.preventDefault();
+
+    createUserWithEmailAndPassword(auth, emailAddress, password)
+      .then((userCredential) => {
+        let user = {
+          userId: userCredential.user.uid,
+          username: username,
+          fullName: fullname,
+          emailAddress: emailAddress,
+          dateCreated: Date.now(),
+        };
+
+        addDoc(collection(db, "users"), user);
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+  //   console.log(error);
+
   return (
-    <div className="relative w-vw items-center h-253 bg-gray-50">
-      <div className="flex absolute inset-0 justify-center pb-10 w-vw -space-x-6 border-solid border-gray-100 h-full mr-14">
+    <div className="flex flex-wrap justify-center w-vw items-center h-253 bg-gray-50">
+      <div className="flex flex-wrap justify-center pb-10 w-vw border-solid border-gray-100 h-full">
         <div className="hidden w-116 h-173">
           <img src="/images/login_images/iphone-with-profile.jpg" />
         </div>
@@ -40,7 +65,7 @@ const Signup = () => {
               </button>
             </div>
             <div className="inline-flex items-center justify-center w-full border-hidden border-2 border-gray-400 w-68 h-5">
-              <div className="flex justify-center w-68 h-px bg-gray-300 border-1 dark:bg-gray-700 items-center">
+              <div className="flex justify-center w-68 h-63/1000 bg-gray-300 border-1 dark:bg-gray-700 items-center">
                 <span className="border-hidden border-1 border-gray-400 px-5 text-xs font-semibold text-gray-500 bg-white dark:text-white dark:bg-gray-900">
                   OR
                 </span>
@@ -56,24 +81,28 @@ const Signup = () => {
                   placeholder="  Mobile number or email address"
                   className=" text-xs text-black w-68 border-solid border-1 h-9 border-gray-300 bg-gray-50 rounded-sm"
                   onChange={({ target }) => setEmailAddress(target.value)}
+                  value={emailAddress}
                 ></input>
                 <input
                   type="text"
                   placeholder="  Full Name"
                   className="text-xs text-black w-68 border-solid border-1 h-9 border-gray-300 rounded-sm bg-gray-50"
                   onChange={({ target }) => setFullname(target.value)}
+                  value={fullname}
                 ></input>
                 <input
                   type="text"
                   placeholder="  Username"
                   className="text-xs text-black w-68 border-solid border-1 h-9 border-gray-300 rounded-sm bg-gray-50"
                   onChange={({ target }) => setUsername(target.value)}
+                  value={username}
                 ></input>
                 <input
                   type="text"
                   placeholder="  Password"
                   className="text-xs text-black w-68 border-solid border-1 h-9 border-gray-300 rounded-sm bg-gray-50"
                   onChange={({ target }) => setPassword(target.value)}
+                  value={password}
                 ></input>
               </div>
               <div className="flex flex-wrap text-center text-xs w-68 h-28 border-hidden border-1 border-gray-300 text-gray-500">
@@ -90,7 +119,7 @@ const Signup = () => {
                   type="submit"
                   className="bg-blue-400 w-68 rounded-lg text-white h-8 "
                 >
-                  Log in
+                  Sign up
                 </button>
               </div>
             </form>
