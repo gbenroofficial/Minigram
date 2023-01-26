@@ -126,7 +126,7 @@ const Signup = () => {
           </div>
           <div className="flex flex-wrap justify-center items-center w-88 h-16 border-solid border-1 border-gray-300 text-sm bg-white">
             Have an account? {"  "}
-            <Link to={"/login"} className="text-blue-500 font-semibold">
+            <Link to={"/"} className="text-blue-500 font-semibold">
               Login
             </Link>
           </div>
