@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import fireContext from "../contexts/firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -9,6 +9,9 @@ import "../styles/app.css";
 import "../styles/sub.css";
 //import pic from "../../public/images/login_images/1.png";
 const Login = () => {
+  useEffect(() => {
+    document.title = "Instagram - login";
+  }, []);
   const navigate = useNavigate();
 
   // eslint-disable-next-line no-unused-vars
@@ -65,7 +68,7 @@ const Login = () => {
                   value={emailAddress}
                 ></input>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="  Password"
                   className="text-xs text-black w-68 border-solid border-1 h-9 border-gray-300 rounded-sm bg-gray-50"
                   onChange={({ target }) => setPassword(target.value)}

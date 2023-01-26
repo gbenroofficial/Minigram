@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
@@ -11,6 +11,9 @@ import "../styles/app.css";
 import "../styles/sub.css";
 //import pic from "../../public/images/login_images/1.png";
 const Signup = () => {
+  useEffect(() => {
+    document.title = "Instagram - sign up";
+  }, []);
   //   const { firebase } = useContext(FirebaseContext);
   const navigate = useNavigate();
   const [emailAddress, setEmailAddress] = useState("");
@@ -21,7 +24,6 @@ const Signup = () => {
   /*  const [error, setError] = useState("");
   const isInvalid = password === "" || emailAddress === ""; */
 
-  //   const auth = getAuth();
   const handleSignup = (e) => {
     e.preventDefault();
 
@@ -98,7 +100,7 @@ const Signup = () => {
                   value={username}
                 ></input>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="  Password"
                   className="text-xs text-black w-68 border-solid border-1 h-9 border-gray-300 rounded-sm bg-gray-50"
                   onChange={({ target }) => setPassword(target.value)}
@@ -119,7 +121,7 @@ const Signup = () => {
                   type="submit"
                   className="bg-blue-400 w-68 rounded-lg text-white h-8 "
                 >
-                  Sign up
+                  Next
                 </button>
               </div>
             </form>

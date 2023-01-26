@@ -1,4 +1,9 @@
-import React from "react";
+import { React, useEffect } from "react";
 
-const Homepage = () => <div> i am Homepage</div>;
+const Homepage = () => {
+  useEffect(() => {
+    document.title = "Instagram - home";
+  }, []);
+  return <div> i am Homepage</div>;
+};
 export default Homepage;
