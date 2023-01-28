@@ -1,7 +1,12 @@
 import React from "react";
+import Card from "./card";
 
 const CardDeck = () => {
-  return <div>card deck</div>;
+  return (
+    <div className="h-auto w-118">
+      <Card />
+    </div>
+  );
 };
 
 export default CardDeck;

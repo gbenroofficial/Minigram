@@ -10,7 +10,7 @@ const NavScreen = () => {
       <div className="w-61 h-screen border-solid border-1 border-gray-300">
         <NavBar />
       </div>
-      <div className="flex-grow h-screen border-solid border-1 border-gray-300">
+      <div className="flex-grow h-auto border-solid border-1 border-gray-300">
         <Home />
       </div>
     </div>

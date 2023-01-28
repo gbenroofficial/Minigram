@@ -549,6 +549,21 @@ video {
 .h-28 {
   height: 7rem;
 }
+.h-2 {
+  height: 0.5rem;
+}
+.h-14 {
+  height: 3.5rem;
+}
+.h-96 {
+  height: 24rem;
+}
+.h-24 {
+  height: 6rem;
+}
+.h-32 {
+  height: 8rem;
+}
 .w-full {
   width: 100%;
 }
@@ -603,6 +618,9 @@ video {
 }
 .border-2 {
   border-width: 2px;
+}
+.border {
+  border-width: 1px;
 }
 .border-solid {
   border-style: solid;
