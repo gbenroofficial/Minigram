@@ -9,7 +9,7 @@ const Card = () => {
       <div className="w-full h-147 border-solid border-1 border-gray-300">
         img
       </div>
-      <div className="w-full h-26 border-solid border-1 border-gray-300">
+      <div className="w-full h-36 border-solid border-1 border-gray-300">
         bottom
       </div>
     </div>

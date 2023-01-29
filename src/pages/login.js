@@ -1,17 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import fireContext from "../contexts/firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import Homepage from "./homepage";
+
 import "../styles/app.css";
 import "../styles/sub.css";
+import { logContext } from "../contexts/logStatus";
+
 //import pic from "../../public/images/login_images/1.png";
 const Login = () => {
   useEffect(() => {
     document.title = "Instagram - login";
   }, []);
+  const [, setLogin] = useContext(logContext);
   const navigate = useNavigate();
 
   // eslint-disable-next-line no-unused-vars
@@ -28,7 +31,10 @@ const Login = () => {
     e.preventDefault();
 
     signInWithEmailAndPassword(auth, emailAddress, password)
-      .then(() => navigate("/Homepage"))
+      .then(() => {
+        setLogin(true);
+        navigate("/");
+      })
       .catch((error) => {
         setEmailAddress("");
         setPassword("");

@@ -3,7 +3,12 @@
 
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+  signOut,
+} from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import { db, auth } from "../lib/firebase";
 
@@ -29,19 +34,27 @@ const Signup = () => {
 
     createUserWithEmailAndPassword(auth, emailAddress, password)
       .then((userCredential) => {
+        userCredential.user.displayName = username.toLowerCase();
         let user = {
           userId: userCredential.user.uid,
-          username: username,
+          username: username.toLowerCase(),
           fullName: fullname,
-          emailAddress: emailAddress,
+          emailAddress: emailAddress.toLowerCase(),
           dateCreated: Date.now(),
         };
 
         addDoc(collection(db, "users"), user);
-        navigate("/");
+        navigate("/Login");
       })
       .catch((error) => {
         setError(error.message);
+      });
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
       });
   };
   //   console.log(error);
@@ -128,7 +141,7 @@ const Signup = () => {
           </div>
           <div className="flex flex-wrap justify-center items-center w-88 h-16 border-solid border-1 border-gray-300 text-sm bg-white">
             Have an account? {"  "}
-            <Link to={"/"} className="text-blue-500 font-semibold">
+            <Link to={"/Login"} className="text-blue-500 font-semibold">
               Login
             </Link>
           </div>
