@@ -82,6 +82,9 @@
 .h-194 {
   height: 48.5rem;
 }
+.h-176 {
+    height: 44rem;
+  }
 .h-173 {
   height: 43.25rem;
 }
@@ -94,6 +97,9 @@
 .h-155 {
   height: 38.75rem;
 }
+.h-153 {
+    height: 38.25rem;
+  }
 .h-150 {
   height: 37.5rem;
 }
@@ -113,6 +119,7 @@
 .h-90 {
   height: 22.5rem;
 }
+
 .h-26 {
   height: 6.5rem;
 }
@@ -153,5 +160,15 @@
 @media (min-width: 1000) {
   .lg-flex {
     display: flex;
+  }
+}
+@media screen and (min-width: 1000) {
+  .lgw-61 {
+    width: 15.25rem;
+  }
+}
+@media screen and (min-width: 1000) {
+  .lgw-55 {
+    width: 13.75rem;
   }
 }
