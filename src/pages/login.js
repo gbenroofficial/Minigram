@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { React, useState, useEffect, useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 // import fireContext from "../contexts/firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
@@ -14,8 +14,7 @@ const Login = () => {
   useEffect(() => {
     document.title = "Instagram - login";
   }, []);
-  const [, setLogin] = useContext(logContext);
-  const navigate = useNavigate();
+  const [isLogged, setIsLogged] = useContext(logContext);
 
   // eslint-disable-next-line no-unused-vars
   //   const { auth } = useContext(fireContext);
@@ -32,8 +31,8 @@ const Login = () => {
 
     signInWithEmailAndPassword(auth, emailAddress, password)
       .then(() => {
-        setLogin(true);
-        navigate("/");
+        setIsLogged(true);
+        //
       })
       .catch((error) => {
         setEmailAddress("");
@@ -43,6 +42,9 @@ const Login = () => {
   };
   console.log(error);
 
+  if (isLogged == true) {
+    return <Navigate to="/" replace={true} />;
+  }
   return (
     <div className="relative w-vw items-center h-screen bg-gray-50">
       <div className="flex absolute inset-0 justify-center pb-10 pt-4 w-vw -space-x-6 border-solid border-gray-100 h-173 mr-14">

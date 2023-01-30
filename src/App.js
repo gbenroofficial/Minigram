@@ -1,28 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
-import NavScreen from "./pages/navscreen";
+// import NavScreen from "./pages/navscreen";
+import Logger from "./pages/logger";
 import "./styles/app.css";
 import { logContext } from "./contexts/logStatus";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // let auth = getAuth();
-  /* const setTrue = () => {
-    setIsLoggedIn(true);
-  };
-  const setFalse = () => {
-    setIsLoggedIn(false);
-  };
- */
-  useEffect(() => {
-    if (isLoggedIn) {
-      console.log("logged in");
-    } else console.log("wahala");
-  });
   const val = [isLoggedIn, setIsLoggedIn];
   return (
     <Router>
@@ -40,7 +28,7 @@ function App() {
           path="/"
           element={
             <logContext.Provider value={val}>
-              <NavScreen />
+              <Logger />
             </logContext.Provider>
           }
         ></Route>
