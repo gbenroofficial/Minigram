@@ -3,7 +3,9 @@ import Card from "./card";
 
 const CardDeck = () => {
   return (
-    <div className="h-auto w-[472px]">
+    <div className="w-[470px]">
+      <Card />
+      <Card />
       <Card />
     </div>
   );
