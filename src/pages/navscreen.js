@@ -18,8 +18,8 @@ const NavScreen = () => {
     navigate("/Login");
   }
   return (
-    <div className="flex flex-wrap flex-row justify-center w-vw items-start bg-gray-50">
-      <div className="w-16 xl:w-[244px] h-screen border-solid border-[1px] border-gray-300">
+    <div className="flex flex-wrap flex-row justify-center w-vw md:items-start h-screen">
+      <div className="fixed bottom-0 inset-x-0 w-full flex flex-wrap justify-items-stretch md:block md:left-0 md:inset-y-0 md:w-16 xl:w-[244px] h-[48px] md:h-screen border-solid border-[1px] border-gray-300">
         <NavBar />
       </div>
       <div className="flex-grow h-auto border-solid border-[1px] border-gray-300"></div>
