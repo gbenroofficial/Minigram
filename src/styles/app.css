@@ -508,6 +508,10 @@ video {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
+.my-\[16px\] {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
 .mr-\[64px\] {
   margin-right: 64px;
 }
@@ -681,6 +685,9 @@ video {
 }
 .h-\[1000px\] {
   height: 1000px;
+}
+.h-\[58px\] {
+  height: 58px;
 }
 .max-h-max {
   max-height: max-content;
