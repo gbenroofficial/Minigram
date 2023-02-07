@@ -7,7 +7,7 @@ import "../styles/app.css";
 
 const NavBar = () => {
   const auth = getAuth();
-  const [value, setValue] = useContext(logContext);
+  const [, setValue] = useContext(logContext);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +21,7 @@ const NavBar = () => {
         console.log(error);
       });
   };
-  console.log(value);
+  // console.log(value);
 
   return (
     <div className="w-full h-48 flex flex-wrap justify-items-center md:block md:h-screen md:w-12 xl:w-[244px]">
