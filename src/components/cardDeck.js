@@ -3,14 +3,17 @@ import Card from "./card";
 import { useEffect } from "react";
 
 // import { onAuthStateChanged, getAuth } from "firebase/auth";
-import { GetUserbyid } from "../services/actions";
+import { GetUserbyid } from "../services/firebase";
 
 const CardDeck = () => {
   // const auth = getAuth();
   useEffect(() => {
-    const userData = GetUserbyid("2");
-    console.log(userData);
-  });
+    async function getUser() {
+      const userData = await GetUserbyid("2");
+      console.log(userData);
+    }
+    getUser();
+  }, []);
 
   return (
     <div className="w-[470px]">
