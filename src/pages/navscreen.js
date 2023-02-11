@@ -1,12 +1,13 @@
 import { React, useEffect } from "react";
 
 import "../styles/app.css";
-import Home from "../components/home";
+// import Home from "../components/home";
 import NavBar from "../components/navbar";
 import { useContext } from "react";
 import { logContext } from "../contexts/logStatus";
 
 import { useNavigate } from "react-router-dom";
+import CreateForm from "../components/createForm";
 const NavScreen = () => {
   useEffect(() => {
     document.title = "Instagram";
@@ -23,7 +24,8 @@ const NavScreen = () => {
         <NavBar />
       </div>
       <div className="max-h-screen z-0 overflow-y-auto hover:overflow-scroll fixed flex justify-center left-0 md:left-16 xl:left-[244px] right-0 w-auto border-solid border-0">
-        <Home />
+        {/* <Home /> */}
+        <CreateForm />
       </div>
     </div>
   );
