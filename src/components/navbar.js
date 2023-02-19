@@ -5,7 +5,8 @@ import { getAuth, signOut } from "firebase/auth";
 
 import "../styles/app.css";
 
-const NavBar = () => {
+// eslint-disable-next-line react/prop-types
+const NavBar = ({ setCreate }) => {
   const auth = getAuth();
   const [, setValue] = useContext(logContext);
 
@@ -123,7 +124,9 @@ const NavBar = () => {
                 <div className="w-6 h-6 xl:mr-4">
                   <img src="/images/nav_logos/create.png" />
                 </div>
-                <div className="hidden xl:flex h-6">Create</div>
+                <div className="hidden xl:flex h-6" onClick={setCreate}>
+                  Create
+                </div>
               </div>
             </div>
           </div>
@@ -152,8 +155,8 @@ const NavBar = () => {
           </div>
           <div className="hidden xl:flex h-6">More</div>
           {isOpen && (
-            <div className="absolute -top-[320px] w-[270px] -ml-[2px] h-[400] bg-white grid grid-rows-6 justify-items-center place-content-evenly">
-              <div className="w-[270px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle">
+            <div className="absolute -top-[320px] w-[250px] -ml-[2px] h-[400] bg-white grid grid-rows-6 justify-items-center place-content-evenly">
+              <div className="w-[250px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle">
                 Settings
               </div>
               <div className="w-[270px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle">

@@ -1,8 +1,12 @@
 import React from "react";
 import "../styles/app.css";
-const CreateForm = () => {
+// eslint-disable-next-line react/prop-types
+const CreateForm = ({ setCreate }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-10">
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black/60 z-10"
+      onClick={setCreate}
+    >
       <div className="w-[388px] h-[431px] border-solid border-[1px] border-gray-300 flex justify-center">
         <div className="w-[348px] h-[390px] border-solid border-[1px] border-gray-300 flex flex-wrap rounded-[15px] bg-white z-20">
           <div className="w-[348px] h-[42px] flex items-center border-b border-gray-300">

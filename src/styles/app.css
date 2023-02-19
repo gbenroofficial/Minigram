@@ -722,6 +722,9 @@ video {
 .w-auto {
   width: auto;
 }
+.w-\[250px\] {
+  width: 250px;
+}
 .flex-none {
   flex: none;
 }
