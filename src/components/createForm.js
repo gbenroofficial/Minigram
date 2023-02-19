@@ -2,9 +2,9 @@ import React from "react";
 import "../styles/app.css";
 const CreateForm = () => {
   return (
-    <div className="w-470 xl:w-[853px] h-screen flex items-center border-solid border-[1px] border-gray-300">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-10">
       <div className="w-[388px] h-[431px] border-solid border-[1px] border-gray-300 flex justify-center">
-        <div className="w-[348px] h-[390px] border-solid border-[1px] border-gray-300 flex flex-wrap rounded-[15px]">
+        <div className="w-[348px] h-[390px] border-solid border-[1px] border-gray-300 flex flex-wrap rounded-[15px] bg-white z-20">
           <div className="w-[348px] h-[42px] flex items-center border-b border-gray-300">
             <div className="w-[348px] h-[24px] text-center font-semibold">
               Create new post
