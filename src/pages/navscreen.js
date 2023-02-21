@@ -27,11 +27,11 @@ const NavScreen = () => {
   return (
     <>
       <div className="h-screen block w-vw border-solid border-[0px]">
-        <div className="z-10 border-t-2 fixed bottom-0 inset-x-0 w-full flex flex-wrap justify-items-stretch md:block md:left-0 md:inset-y-0 md:w-16 xl:w-[244px] h-[48px] md:h-screen border-solid md:border-r-2 md:border-y-0">
-          <NavBar setCreate={setCreate} />
-        </div>
         <div className="max-h-screen z-0 overflow-y-auto hover:overflow-scroll fixed flex justify-center left-0 md:left-16 xl:left-[244px] right-0 w-auto border-solid border-0">
           <Home />
+        </div>
+        <div className="z-20 bg-white border-t-2 fixed bottom-0 inset-x-0 w-full flex flex-wrap justify-items-stretch md:block md:left-0 md:inset-y-0 md:w-16 xl:w-[244px] h-[48px] md:h-screen border-solid md:border-r-2 md:border-y-0">
+          <NavBar setCreate={setCreate} />
         </div>
       </div>
       {isCreate && <CreateForm setCreate={setCreate} />}
