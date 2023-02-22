@@ -13,6 +13,7 @@ const CreateForm = ({ setCreate }) => {
   const handleChange = (event) => {
     // eslint-disable-next-line no-unused-vars
     const selected = event.target.files[0];
+    console.log(selected);
   };
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-20">
@@ -44,6 +45,7 @@ const CreateForm = ({ setCreate }) => {
                 <input
                   className="hidden"
                   type="file"
+                  accept="image/jpeg, image/png"
                   ref={hiddenInput}
                   onChange={handleChange}
                 ></input>
