@@ -21,18 +21,19 @@ const CreateForm = ({ setCreate }) => {
         onClick={setCreate}
         className="items-center flex justify-center"
       >
-        <div className="w-[348px] h-[390px] border-solid border-[1px] border-gray-300 flex justify-center">
-          <div className="w-[348px] h-[390px] border-solid border-[1px] border-gray-300 flex flex-wrap rounded-[15px] bg-white z-20">
-            <div className="w-[348px] h-[42px] flex items-center border-b border-gray-300">
-              <div className="w-[348px] h-[24px] text-center font-semibold">
+        <div className="w-[348px] h-[390px] sm:w-[55vh] sm:h-[64vh] lg:w-[570px] lg:h-[600px] border-solid border-[1px] border-gray-300 flex justify-center">
+          <div className="w-[348px] h-[390px] sm:w-[55vh] sm:h-[64vh] lg:w-[570px] lg:h-[600px] border-solid border-[1px] border-gray-300 flex flex-wrap justify-center rounded-[15px] bg-white z-20">
+            <div className="w-[348px] h-[42px] sm:w-[55vh] lg:w-[570px] flex items-center border-b border-gray-300">
+              <div className="w-[348px] h-[24px] sm:w-[55vh] lg:w-[570px] text-center font-semibold">
                 Create new post
               </div>
             </div>
-            <div className="w-[348px] h-[348px] self-end p-[24px] flex flex-wrap justify-center content-center">
+            <div className="w-[348px] h-[348px] sm:w-[55vh] sm:h-[60vh] lg:w-[597px] lg:h-[597px] self-end p-[24px] flex flex-wrap flex-col items-center justify-center">
               <div className="border-solid border-gray-300 w-[90px] h-[77px]">
                 <img src="/images/create_logo/create_logo.jpeg" />
               </div>
-              <div className="w-[255.95px] h-[40px] pt-[15px] flex justify-center text-xl">
+
+              <div className="w-[255.95px] h-[40px] pt-[15px] flex justify-self-center text-xl">
                 Drag photos and videos here
               </div>
               <div className="w-[182.01px] h-[40px] mt-[15px] flex justify-center">
