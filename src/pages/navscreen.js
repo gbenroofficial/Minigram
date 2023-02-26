@@ -1,13 +1,13 @@
-import { React, useEffect, useState } from "react";
+/* eslint-disable no-unused-vars */
+import { React, useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/app.css";
 import Home from "../components/home";
 import NavBar from "../components/navbar";
-import { useContext } from "react";
 import { logContext } from "../contexts/logStatus";
-
-import { useNavigate } from "react-router-dom";
 import CreateForm from "../components/createForm";
+
 const NavScreen = () => {
   useEffect(() => {
     document.title = "Instagram";
@@ -19,6 +19,7 @@ const NavScreen = () => {
     navigate("/Login");
   }
   const [isCreate, setIsCreate] = useState(false);
+  const [screen, setScreen] = useState("home");
 
   const setCreate = () => {
     setIsCreate(!isCreate);
