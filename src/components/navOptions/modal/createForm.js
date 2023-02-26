@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import "../styles/app.css";
-import { ClickOutside } from "./clickOutside";
+import "../../../styles/app.css";
+import { ClickOutside } from "../../functionalWraps/clickOutside";
 // eslint-disable-next-line react/prop-types
 const CreateForm = ({ setCreate }) => {
   const hiddenInput = useRef();

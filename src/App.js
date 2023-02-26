@@ -12,6 +12,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const val = [isLoggedIn, setIsLoggedIn];
+  console.log(window.location.pathname);
   return (
     <Router>
       <Routes>

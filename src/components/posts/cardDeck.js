@@ -3,7 +3,7 @@ import Card from "./card";
 import { useEffect } from "react";
 
 // import { onAuthStateChanged, getAuth } from "firebase/auth";
-import { GetUserbyid } from "../services/firebase";
+import { GetUserbyid } from "../../services/firebase";
 
 const CardDeck = () => {
   // const auth = getAuth();

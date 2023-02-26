@@ -1,9 +1,9 @@
 import { React, useEffect } from "react";
-import "../styles/app.css";
+import "../../styles/app.css";
 
-import Suggestions from "./suggestions";
-import Stories from "./stories";
-import CardDeck from "./cardDeck";
+import Suggestions from "../suggestions";
+import Stories from "../story/stories";
+import CardDeck from "../posts/cardDeck";
 
 const Home = () => {
   useEffect(() => {

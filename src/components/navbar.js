@@ -39,7 +39,7 @@ const NavBar = ({ setCreate }) => {
         <div className="w-full h-48 flex flex-wrap justify-around md:block md:w-12 xl:w-[220px] md:h-[620px] border-hidden border-[1px] border-gray-300">
           <div
             className="md:hover:bg-gray-100 md:h-12 md:w-12 xl:w-[220px] md:rounded-full"
-            href="#"
+            href="/"
           >
             <div className="flex flex-wrap items-center justify-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
@@ -52,7 +52,7 @@ const NavBar = ({ setCreate }) => {
           </div>
           <div
             className="hidden md:flex md:hover:bg-gray-100 md:h-12 md:w-12 xl:w-[220px] md:rounded-full"
-            href="#"
+            href="/search"
           >
             <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
@@ -65,7 +65,7 @@ const NavBar = ({ setCreate }) => {
           </div>
           <div
             className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-            href="#"
+            href="/explore"
           >
             <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
@@ -78,7 +78,7 @@ const NavBar = ({ setCreate }) => {
           </div>
           <div
             className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-            href="#"
+            href="/reels"
           >
             <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
@@ -91,7 +91,7 @@ const NavBar = ({ setCreate }) => {
           </div>
           <div
             className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-            href="#"
+            href="/messages"
           >
             <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
@@ -104,7 +104,7 @@ const NavBar = ({ setCreate }) => {
           </div>
           <div
             className="hidden md:flex md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-            href="#"
+            href="/notifications"
           >
             <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
@@ -118,21 +118,20 @@ const NavBar = ({ setCreate }) => {
           <div
             className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
             href="#"
+            onClick={setCreate}
           >
             <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
                 <div className="w-6 h-6 xl:mr-4">
                   <img src="/images/nav_logos/create.png" />
                 </div>
-                <div className="hidden xl:flex h-6" onClick={setCreate}>
-                  Create
-                </div>
+                <div className="hidden xl:flex h-6">Create</div>
               </div>
             </div>
           </div>
           <div
             className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-            href="#"
+            href="/profile"
           >
             <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
               <div className="flex items-center h-6 md:w-full">
