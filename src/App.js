@@ -2,10 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 // import NavScreen from "./pages/navscreen";
-import Logger from "./pages/logger";
+import LogGate from "./pages/logGate";
 import "./styles/app.css";
 import { logContext } from "./contexts/logStatus";
 import { useState } from "react";
+
 // import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 function App() {
@@ -26,10 +27,10 @@ function App() {
         ></Route>
         <Route path="/Signup" element={<Signup />}></Route>
         <Route
-          path="/"
+          path="/*"
           element={
             <logContext.Provider value={val}>
-              <Logger />
+              <LogGate />
             </logContext.Provider>
           }
         ></Route>

@@ -1,9 +1,9 @@
 import { logContext } from "../contexts/logStatus";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import NavScreen from "./navscreen";
+import NavScreen from "./NavScreen";
 
-const Logger = () => {
+const LogGate = () => {
   const [value, ,] = useContext(logContext);
   //   const navigate = useNavigate();
   if (value == false) {
@@ -12,4 +12,4 @@ const Logger = () => {
   return <NavScreen />;
 };
 
-export default Logger;
+export default LogGate;
