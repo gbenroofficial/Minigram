@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import NavScreen from "./NavScreen";
 
-const LogGate = () => {
+const Logger = () => {
   const [value, ,] = useContext(logContext);
   //   const navigate = useNavigate();
   if (value == false) {
@@ -12,4 +12,4 @@ const LogGate = () => {
   return <NavScreen />;
 };
 
-export default LogGate;
+export default Logger;

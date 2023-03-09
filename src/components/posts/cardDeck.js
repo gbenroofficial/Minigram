@@ -1,16 +1,18 @@
 import React from "react";
 import Card from "./card";
 import { useEffect } from "react";
+import { getAuth } from "firebase/auth";
 
 // import { onAuthStateChanged, getAuth } from "firebase/auth";
-import { GetUserbyid } from "../../services/firebase";
+import { fetchUserProfileByDocId } from "../../services/firebase";
 
 const CardDeck = () => {
-  // const auth = getAuth();
   useEffect(() => {
+    const auth = getAuth();
+    const loggedUser = auth.currentUser;
     async function getUser() {
-      const userData = await GetUserbyid("2");
-      console.log(userData);
+      const loggedUserData = await fetchUserProfileByDocId(loggedUser.uid);
+      console.log(loggedUserData);
     }
     getUser();
   }, []);

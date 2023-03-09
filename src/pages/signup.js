@@ -49,13 +49,6 @@ const Signup = () => {
       .catch((error) => {
         setError(error.message);
       });
-    signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        // An error happened.
-      });
   };
   //   console.log(error);
 
@@ -67,7 +60,7 @@ const Signup = () => {
         </div>
 
         <div className="flex flex-wrap md:shrink-0 justify-center border-hidden mt-3 border-[1px] border-gray-300 w-[368px] h-full -space-y-40">
-          <div className="flex flex-wrap justify-center w-[352px] h-160 pt-10 border-solid border-[1px] border-gray-300 bg-white mb-2">
+          <div className="flex flex-wrap justify-center w-[352px] h-[650px] pt-10 border-solid border-[1px] border-gray-300 bg-white mb-2">
             <div className="flex justify-center border-hidden border-[1px] w-44 h-12 mt-2">
               <img src="/images/login_images/logo.png"></img>
             </div>

@@ -54,7 +54,7 @@ const NavBar = ({ setCreate }) => {
             </NavLink>
             <NavLink>
               <div
-                className="hidden md:flex md:hover:bg-gray-100 md:h-12 md:w-12 xl:w-[220px] md:rounded-full"
+                className="hidden md:block md:hover:bg-gray-100 md:h-12 md:w-12 xl:w-[220px] md:rounded-full"
                 href="/search"
               >
                 <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
@@ -115,7 +115,7 @@ const NavBar = ({ setCreate }) => {
             </NavLink>
             <NavLink>
               <div
-                className="hidden md:flex md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
+                className="hidden md:block md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
                 href="/notifications"
               >
                 <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">

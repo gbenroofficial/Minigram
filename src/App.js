@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 // import NavScreen from "./pages/navscreen";
-import LogGate from "./pages/logGate";
+import Logger from "./pages/logger";
 import "./styles/app.css";
 import { logContext } from "./contexts/logStatus";
 import { useState } from "react";
@@ -30,7 +30,7 @@ function App() {
           path="/*"
           element={
             <logContext.Provider value={val}>
-              <LogGate />
+              <Logger />
             </logContext.Provider>
           }
         ></Route>
