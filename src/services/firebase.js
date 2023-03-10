@@ -1,4 +1,14 @@
-import { collection, query, where, getDocs } from "firebase/firestore";
+import {
+  getDoc,
+  doc,
+  updateDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+  arrayUnion,
+  arrayRemove,
+} from "firebase/firestore";
 import { db } from "../lib/firebase";
 
 export async function fetchUserProfileByDocId(userid) {
@@ -13,33 +23,42 @@ export async function fetchUserProfileByDocId(userid) {
   return userData;
 }
 
-//update logged in user following list
-export async function updLoggedUserFollowing(
-  loggedUserid,
-  targetUserId,
-  isFollowing
-) {
-  loggedUserid;
-  targetUserId;
-  isFollowing;
+//add target user to user following list
+export async function addToFollowing(Userid, targetUserId) {
+  const docRef = doc(db, "users", Userid);
+  await updateDoc(docRef, { following: arrayUnion(targetUserId) });
+}
+
+//remove target user from user following list
+export async function removeFromFollowing(Userid, targetUserId) {
+  const docRef = doc(db, "users", Userid);
+  await updateDoc(docRef, { following: arrayRemove(targetUserId) });
 }
 
 //update followed user's followers list
-export async function updFollowedUserFollowers(
-  followedUserid,
-  loggedUserId,
-  isFollower
-) {
-  followedUserid;
-  loggedUserId;
-  isFollower;
+export async function removeFromFollower(Userid, targetUserId) {
+  const docRef = doc(db, "users", Userid);
+  await updateDoc(docRef, { follower: arrayRemove(targetUserId) });
 }
 
-export async function isFollowing(loggedUserId, targetUserId) {
-  loggedUserId;
-  targetUserId;
+export async function addToFollower(Userid, targetUserId) {
+  const docRef = doc(db, "users", Userid);
+  await updateDoc(docRef, { follower: arrayUnion(targetUserId) });
 }
-export async function isFollower(loggedUserId, followedUserId) {
-  loggedUserId;
-  followedUserId;
+
+export async function isFollowing(userId, targetUserId) {
+  const userList = [];
+  const docRef = doc(db, "users", userId);
+  const userShot = await getDoc(docRef); //need to add if usershot exist error handling
+  const user = userShot.data();
+  user.following.map((user) => userList.push(user));
+  return user.following.includes(targetUserId);
+}
+export async function isFollowedBy(userId, targetUserId) {
+  const userList = [];
+  const docRef = doc(db, "users", userId);
+  const userShot = await getDoc(docRef);
+  const user = userShot.data();
+  user.followers.map((user) => userList.push(user));
+  return userList.includes(targetUserId);
 }
