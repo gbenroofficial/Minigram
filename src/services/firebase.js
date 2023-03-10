@@ -36,14 +36,14 @@ export async function removeFromFollowing(Userid, targetUserId) {
 }
 
 //update followed user's followers list
-export async function removeFromFollower(Userid, targetUserId) {
+export async function removeFromFollowers(Userid, targetUserId) {
   const docRef = doc(db, "users", Userid);
-  await updateDoc(docRef, { follower: arrayRemove(targetUserId) });
+  await updateDoc(docRef, { followers: arrayRemove(targetUserId) });
 }
 
-export async function addToFollower(Userid, targetUserId) {
-  const docRef = doc(db, "users", Userid);
-  await updateDoc(docRef, { follower: arrayUnion(targetUserId) });
+export async function addToFollowers(Userid, targetUserId) {
+  const docRef = doc(db, "users", Userid); //reference to the document
+  await updateDoc(docRef, { followers: arrayUnion(targetUserId) }); //arrayunion adds to the array. updateDoc creates new array if not exist
 }
 
 export async function isFollowing(userId, targetUserId) {
@@ -57,8 +57,8 @@ export async function isFollowing(userId, targetUserId) {
 export async function isFollowedBy(userId, targetUserId) {
   const userList = [];
   const docRef = doc(db, "users", userId);
-  const userShot = await getDoc(docRef);
-  const user = userShot.data();
+  const userShot = await getDoc(docRef); //getDoc returns queryshot type
+  const user = userShot.data(); //.data() converts queryshot type to document data
   user.followers.map((user) => userList.push(user));
-  return userList.includes(targetUserId);
+  return userList.includes(targetUserId); //user.followers.includes also works. will come back to edit
 }
