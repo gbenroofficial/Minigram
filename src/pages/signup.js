@@ -9,7 +9,7 @@ import {
   updateProfile,
   signOut,
 } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, setDoc, doc } from "firebase/firestore";
 import { db, auth } from "../lib/firebase";
 
 import "../styles/app.css";
@@ -43,7 +43,7 @@ const Signup = () => {
           dateCreated: Date.now(),
         };
 
-        addDoc(collection(db, "users"), user);
+        setDoc(doc(db, "users", userCredential.user.uid), user);
         navigate("/Login");
       })
       .catch((error) => {

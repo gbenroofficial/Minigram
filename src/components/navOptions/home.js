@@ -1,16 +1,16 @@
 import { React, useEffect } from "react";
 import "../../styles/app.css";
 
-import Suggestions from "../suggestions";
-import Stories from "../story/stories";
-import CardDeck from "../posts/cardDeck";
+import Suggestions from "../suggestionComponents/suggestions";
+import Stories from "../storyComponents/stories";
+import CardDeck from "../postsComponents/cardDeck";
 
 const Home = () => {
   useEffect(() => {
     document.title = "Instagram - home";
   }, []);
   return (
-    <div className="w-[470px] xl:w-[853px] max-h-screen flex justify-between border-solid border-[0px]">
+    <div className="mt-[50px] w-[470px] xl:w-[853px] max-h-screen flex justify-between border-solid border-[0px]">
       <div className="w-[470px] border-solid border-[0px]">
         <Stories />
         <CardDeck />

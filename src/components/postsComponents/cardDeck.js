@@ -5,14 +5,14 @@ import { getAuth } from "firebase/auth";
 // import { isFollowing, isFollowedBy } from "../../services/firebase";
 // import { addToFollowers, addToFollowing, removeFromFollowers, removeFromFollowing } from "../../services/firebase";
 // import { onAuthStateChanged, getAuth } from "firebase/auth";
-import { fetchUserProfileByDocId } from "../../services/firebase";
+import { fetchUserDataByUserId } from "../../services/firebase";
 
 const CardDeck = () => {
   useEffect(() => {
     const auth = getAuth();
     const loggedUser = auth.currentUser;
     async function getUser() {
-      const loggedUserData = await fetchUserProfileByDocId(loggedUser.uid);
+      const loggedUserData = await fetchUserDataByUserId(loggedUser.uid);
       console.log(loggedUserData);
     }
 
