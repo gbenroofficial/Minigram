@@ -60,6 +60,7 @@ export async function isFollowedBy(userId, targetUserId) {
 
 export async function getSuggestions(loggedUserId, followingArray) {
   let q;
+  let profiles = [];
   if (followingArray?.length) {
     q = query(
       collection(db, "users"),
@@ -68,8 +69,11 @@ export async function getSuggestions(loggedUserId, followingArray) {
   } else
     q = query(collection(db, "users"), where("userId", "!=", loggedUserId));
 
-  const profilesShot = await getDocs(q);
-  const profiles = profilesShot.data();
+  const profilesShot = await getDocs(q); //returns querysnapshot with a list of document snapshot
+  profilesShot.forEach((docSnap) => {
+    //foreach method helps iterate through each document snapshot
+    profiles.push(docSnap.data()); // .data() converts each docSnapshot to an object
+  });
 
   return profiles;
 }
