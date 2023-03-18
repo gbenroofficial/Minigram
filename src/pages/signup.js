@@ -41,6 +41,8 @@ const Signup = () => {
           fullName: fullname,
           emailAddress: emailAddress.toLowerCase(),
           dateCreated: Date.now(),
+          following: [],
+          followers: [],
         };
 
         setDoc(doc(db, "users", userCredential.user.uid), user);

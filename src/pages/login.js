@@ -40,7 +40,7 @@ const Login = () => {
         setError(error.message);
       });
   };
-  console.log(error);
+  // console.log(error);
 
   if (isLogged == true) {
     return <Navigate to="/" replace={true} />;

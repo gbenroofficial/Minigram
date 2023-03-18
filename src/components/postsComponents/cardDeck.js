@@ -13,7 +13,8 @@ const CardDeck = () => {
     const loggedUser = auth.currentUser;
     async function getUser() {
       const loggedUserData = await fetchUserDataByUserId(loggedUser.uid);
-      console.log(loggedUserData);
+      loggedUserData;
+      // console.log(loggedUserData);
     }
 
     getUser();

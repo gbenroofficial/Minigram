@@ -19,43 +19,64 @@ export async function fetchUserDataByUserId(userId) {
   return user;
 }
 
+export async function isFollowing(userId, targetUserId) {
+  const docRef = doc(db, "users", userId);
+  const userShot = await getDoc(docRef); //need to add if usershot exist error handling
+  const user = userShot.data(); //.data() converts queryshot type to document data
+
+  if (user.following) {
+    return user.following.includes(targetUserId);
+  }
+  return false;
+}
+
 //add target user to user following list
 export async function addToFollowing(Userid, targetUserId) {
   const docRef = doc(db, "users", Userid);
-  await updateDoc(docRef, { following: arrayUnion(targetUserId) });
+
+  await updateDoc(docRef, {
+    following: arrayUnion(targetUserId),
+  });
 }
 
 //remove target user from user following list
 export async function removeFromFollowing(Userid, targetUserId) {
   const docRef = doc(db, "users", Userid);
+
   await updateDoc(docRef, { following: arrayRemove(targetUserId) });
 }
 
 //remove target user from user's followers list
 export async function removeFromFollowers(Userid, targetUserId) {
   const docRef = doc(db, "users", Userid);
+
   await updateDoc(docRef, { followers: arrayRemove(targetUserId) });
 }
 
 //add target user to user's followers list
 export async function addToFollowers(Userid, targetUserId) {
   const docRef = doc(db, "users", Userid); //reference to the document
+
   await updateDoc(docRef, { followers: arrayUnion(targetUserId) }); //arrayunion adds to the array. updateDoc creates new array if not exist
 }
 
-export async function isFollowing(userId, targetUserId) {
-  const docRef = doc(db, "users", userId);
-  const userShot = await getDoc(docRef); //need to add if usershot exist error handling
-  const user = userShot.data();
-
-  return user.following.includes(targetUserId);
-}
 export async function isFollowedBy(userId, targetUserId) {
   const docRef = doc(db, "users", userId);
   const userShot = await getDoc(docRef); //getDoc returns queryshot type
   const user = userShot.data(); //.data() converts queryshot type to document data
-
-  return user.followers.includes(targetUserId); //user.followers.includes also works. will come back to edit
+  if (user.followers) {
+    return user.followers.includes(targetUserId);
+  }
+  return false;
+}
+export async function updateFollow(userId, targetUserId) {
+  if (isFollowing(userId, targetUserId)) {
+    removeFromFollowing(userId, targetUserId);
+    removeFromFollowers(targetUserId, userId);
+  } else {
+    addToFollowing(userId, targetUserId);
+    addToFollowers(targetUserId, userId);
+  }
 }
 
 export async function getSuggestions(loggedUserId, followingArray) {

@@ -545,8 +545,8 @@ video {
 .mt-\[100px\] {
   margin-top: 100px;
 }
-.mt-4 {
-  margin-top: 1rem;
+.mt-5 {
+  margin-top: 1.25rem;
 }
 .mt-\[15px\] {
   margin-top: 15px;
@@ -766,9 +766,6 @@ video {
 }
 .justify-items-stretch {
   justify-items: stretch;
-}
-.gap-5 {
-  gap: 1.25rem;
 }
 .-space-x-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
