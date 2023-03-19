@@ -7,6 +7,7 @@ import {
   getDocs,
   arrayUnion,
   arrayRemove,
+  increment,
   where,
 } from "firebase/firestore";
 import { db } from "../lib/firebase";
@@ -97,4 +98,42 @@ export async function getSuggestions(loggedUserId, followingArray) {
   });
 
   return profiles;
+}
+
+export async function getFollowingCards(following) {
+  const q = query(collection(db, "cards"), where("ownerId", "in", following));
+  const results = await getDocs(q);
+  const cards = results.docs.map((card) => ({
+    docId: card.id,
+    ...card.data(),
+  }));
+
+  return cards;
+}
+
+export async function didUserLikeCard(loggedUserId, cardId) {
+  const cardRef = doc(db, "cards", cardId);
+  const card = await getDoc(cardRef);
+  return card.likedBy.includes(loggedUserId);
+}
+
+export async function addComment(loggedUserId, cardId, comment) {
+  const cardRef = doc(db, "cards", cardId);
+  await updateDoc(cardRef, { comments: arrayUnion(comment) });
+}
+
+export async function updateCardLike(loggedUserId, cardId) {
+  const cardRef = doc(db, "cards", cardId);
+  const card = (await getDoc(cardRef)).data();
+  if (!card.likedBy.includes(loggedUserId)) {
+    await updateDoc(cardRef, {
+      likedBy: arrayUnion(loggedUserId),
+      likes: increment(1),
+    });
+  } else {
+    await updateDoc(cardRef, {
+      likedBy: arrayRemove(loggedUserId),
+      likes: increment(-1),
+    });
+  }
 }

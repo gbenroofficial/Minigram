@@ -20,7 +20,7 @@ export default function SuggestedProfile({
     const follows = await isFollowing(loggedUserId, suggestedProfileId);
 
     if (!follows) {
-      setButtonStatus("Unfollow");
+      setButtonStatus("Following");
       await addToFollowing(loggedUserId, suggestedProfileId);
       await addToFollowers(suggestedProfileId, loggedUserId);
     } else {
@@ -50,7 +50,7 @@ export default function SuggestedProfile({
         type="button"
         onClick={handleFollow}
       >
-        {buttonStatus} bb
+        {buttonStatus}
       </button>
     </div>
   );
