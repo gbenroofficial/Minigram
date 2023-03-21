@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const CardHeader = ({ avatar, userName, timePosted }) => {
   return (
-    <div className="flex border-b border-gray-primary h-4 p-4 py-8">
+    <div className="flex border-gray-primary h-4 p-4 py-8">
       <div className="flex items-center">
         <NavLink to={`/p/${userName}`} className="flex items-center">
           <img

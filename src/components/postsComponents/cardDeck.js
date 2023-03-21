@@ -32,10 +32,8 @@ const CardDeck = () => {
     return (
       <div className="w-[470px]">
         {cards.map((card) => (
-          <Card key={card.cardId} cardMedias={card.medias} />
+          <Card key={card.cardId} cardData={card} />
         ))}
-        <img className="h-7" src="images/arrowIcons/arrowForward.avif"></img>
-        <img className="h-7" src="images/arrowIcons/arrowBack.avif"></img>
       </div>
     );
   }

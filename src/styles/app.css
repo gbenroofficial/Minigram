@@ -492,11 +492,17 @@ video {
 .right-0 {
   right: 0px;
 }
+.top-\[290px\] {
+  top: 290px;
+}
 .z-20 {
   z-index: 20;
 }
 .z-0 {
   z-index: 0;
+}
+.z-10 {
+  z-index: 10;
 }
 .my-1 {
   margin-top: 0.25rem;
@@ -822,6 +828,9 @@ video {
 .rounded-\[15px\] {
   border-radius: 15px;
 }
+.rounded-md {
+  border-radius: 0.375rem;
+}
 .border-\[1px\] {
   border-width: 1px;
 }
@@ -878,12 +887,16 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
-.bg-black\/60 {
-  background-color: rgb(0 0 0 / 0.6);
-}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-black\/60 {
+  background-color: rgb(0 0 0 / 0.6);
 }
 .p-3 {
   padding: 0.75rem;
@@ -995,8 +1008,11 @@ video {
 .opacity-50 {
   opacity: 0.5;
 }
-.bg-blend-darken {
-  background-blend-mode: darken;
+.opacity-20 {
+  opacity: 0.2;
+}
+.opacity-25 {
+  opacity: 0.25;
 }
 .hover\:overflow-scroll:hover {
   overflow: scroll;

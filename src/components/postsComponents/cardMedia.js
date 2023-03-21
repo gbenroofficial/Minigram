@@ -15,7 +15,7 @@ const CardMedia = ({ src, caption }) => {
       {isImage ? (
         <img src={src} alt={caption} />
       ) : (
-        <video src={src} alt={caption} controls></video>
+        <video className="z-10" src={src} alt={caption} controls></video>
       )}
     </div>
   );
