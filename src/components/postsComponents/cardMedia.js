@@ -6,7 +6,7 @@ const CardMedia = ({ src, caption }) => {
   let isImage;
   if (ext == "jpg" || ext == "png") {
     isImage = true;
-    console.log(isImage);
+    // console.log(isImage);
   } else {
     isImage = false;
   }

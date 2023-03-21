@@ -101,13 +101,16 @@ export async function getSuggestions(loggedUserId, followingArray) {
 }
 
 export async function getFollowingCards(following) {
+  // console.log("1");
+  let cards = [];
   const q = query(collection(db, "cards"), where("ownerId", "in", following));
   const results = await getDocs(q);
-  const cards = results.docs.map((card) => ({
-    docId: card.id,
-    ...card.data(),
-  }));
 
+  results.forEach((docSnap) => {
+    //foreach method helps iterate through each document snapshot
+    cards.push(docSnap.data()); // .data() converts each docSnapshot to an object
+  });
+  // console.log(cards);
   return cards;
 }
 

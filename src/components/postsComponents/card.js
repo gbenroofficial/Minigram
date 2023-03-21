@@ -3,16 +3,14 @@ import CardHeader from "./cardHeader";
 import CardFooter from "./cardFooter";
 import CardMedia from "./cardMedia";
 
-const Card = () => {
+// eslint-disable-next-line react/prop-types
+const Card = ({ cardMedias }) => {
   let avatar;
   let timePosted = "1h";
   let userName = "username";
   let caption = "caption";
-  let photos = [
-    "images/testImages/meee.jpg",
-    "images/testImages/2.jpg",
-    "images/testImages/ME.mp4",
-  ];
+
+  cardMedias;
   return (
     <div className="w-full h-[788px] block mb-[60px]">
       <div className="w-full">
@@ -23,7 +21,7 @@ const Card = () => {
         />
       </div>
       <div className="flex flex-wrap items-center w-full h-[584px] border-solid border-[1px] border-gray-300 bg-black">
-        <CardMedia src={photos[2]} caption="caption" />
+        <CardMedia src={cardMedias[1]} caption="caption" />
       </div>
       <div className="w-full h-[146px] border-solid border-[1px] border-gray-300">
         <CardFooter userName={userName} caption={caption} />
