@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 
 const Messages = () => {
   useEffect(() => {
-    document.title = "Instagram - messages";
+    document.title = "Minigram - messages";
   }, []);
   return <div>messages</div>;
 };

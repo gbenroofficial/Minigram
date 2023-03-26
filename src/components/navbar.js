@@ -29,10 +29,10 @@ const NavBar = ({ setCreate }) => {
         <div className="h-48 md:h-[692px] w-full md:w-12 xl:w-[244px] flex flex-wrap md:p-2 border-hidden border-[1px] border-gray-300">
           <div className="hidden md:flex h-18-24 w-12 xl:w-[220px] mb-[19.04px] pb-4 pl-3 pt-[24.96px] border-hidden border-[1px] border-gray-300">
             <div className="hidden xl:flex flex-wrap items-center justify-center border-hidden border-[1px] w-[102.4px] h-7">
-              <img src="/images/nav_logos/logo.png" className="mt-2 mb-2"></img>
+              <h1 className="font-serif text-3xl text-black ml-4">Minigram</h1>
             </div>
             <div className="w-8 h-7 xl:hidden">
-              <img src="/images/nav_logos/ig.png" />
+              <img src="/images/nav_logos/miniG.jpeg" />
             </div>
           </div>
 

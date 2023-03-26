@@ -15,7 +15,7 @@ import Reels from "../components/navOptions/reels";
 
 const NavScreen = () => {
   useEffect(() => {
-    document.title = "Instagram";
+    document.title = "Minigram";
   }, []);
   const [loggedVal, ,] = useContext(logContext);
   const navigate = useNavigate();

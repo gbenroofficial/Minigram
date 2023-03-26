@@ -17,7 +17,7 @@ import "../styles/app.css";
 //import pic from "../../public/images/login_images/1.png";
 const Signup = () => {
   useEffect(() => {
-    document.title = "Instagram - sign up";
+    document.title = "Minigram - sign up";
   }, []);
   //   const { firebase } = useContext(FirebaseContext);
   const navigate = useNavigate();
@@ -64,7 +64,7 @@ const Signup = () => {
         <div className="flex flex-wrap md:shrink-0 justify-center border-hidden mt-3 border-[1px] border-gray-300 w-[368px] h-full -space-y-40">
           <div className="flex flex-wrap justify-center w-[352px] h-[650px] pt-10 border-solid border-[1px] border-gray-300 bg-white mb-2">
             <div className="flex justify-center border-hidden border-[1px] w-44 h-12 mt-2">
-              <img src="/images/login_images/logo.png"></img>
+              <h1 className="font-serif text-3xl text-blue-400">Minigram</h1>
             </div>
             <div className="flex items-center w-[272px] text-center text-gray-500 font-semibold text-md border-hidden border-[1px] border-gray-300 h-11">
               Sign up to see photos and videos from your friends.
@@ -117,7 +117,7 @@ const Signup = () => {
               </div>
               <div className="flex flex-wrap text-center text-xs w-[272px] h-28 border-hidden border-[1px] border-gray-300 text-gray-500">
                 People who use our service may have uploaded your contact
-                information to Instagram. Learn more <p></p>
+                information to Minigram. <p></p>
                 <p className="mt-3">
                   By signing up, you agree to our Terms. Learn how we collect,
                   use and share your data in our Privacy Policy and how we use

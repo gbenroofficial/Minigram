@@ -12,9 +12,9 @@ import {
 
 const CardDeck = () => {
   const [cards, setCards] = useState();
+  const auth = getAuth();
+  const loggedUser = auth.currentUser;
   useEffect(() => {
-    const auth = getAuth();
-    const loggedUser = auth.currentUser;
     async function getUser() {
       const loggedUserData = await fetchUserDataByUserId(loggedUser.uid);
 
@@ -32,7 +32,11 @@ const CardDeck = () => {
     return (
       <div className="w-[470px]">
         {cards.map((card) => (
-          <Card key={card.cardId} cardData={card} />
+          <Card
+            key={card.cardId}
+            cardData={card}
+            hasUserLiked={card.likedBy.includes(loggedUser.uid)}
+          />
         ))}
       </div>
     );

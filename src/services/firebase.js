@@ -127,6 +127,7 @@ export async function addComment(loggedUserId, cardId, comment) {
 
 export async function updateCardLike(loggedUserId, cardId) {
   const cardRef = doc(db, "cards", cardId);
+
   const card = (await getDoc(cardRef)).data();
   if (!card.likedBy.includes(loggedUserId)) {
     await updateDoc(cardRef, {

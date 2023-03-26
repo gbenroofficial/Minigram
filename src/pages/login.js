@@ -12,7 +12,7 @@ import { logContext } from "../contexts/logStatus";
 //import pic from "../../public/images/login_images/1.png";
 const Login = () => {
   useEffect(() => {
-    document.title = "Instagram - login";
+    document.title = "Minigram - login";
   }, []);
   const [isLogged, setIsLogged] = useContext(logContext);
 
@@ -46,19 +46,16 @@ const Login = () => {
     return <Navigate to="/" replace={true} />;
   }
   return (
-    <div className="relative w-vw items-center h-screen bg-gray-50">
-      <div className="flex absolute inset-0 justify-center pb-10 pt-4 w-vw -space-x-6 border-solid border-gray-100 h-[692px] mr-14">
-        <div className="hidden md:flex flex-none w-[464px] h-full">
-          <img src="/images/login_images/iphone-with-profile.jpg" />
+    <div className="relative w-vw items-center h-screen">
+      <div className="flex absolute inset-0 justify-center pb-10 pt-4 w-vw border-solid border-gray-100 h-[692px] mr-14 mt-44">
+        <div className="hidden md:flex flex-none w-[368px] h-[385px] mt-7">
+          <img src="/images/login_images/fancyBear.jpeg" />
         </div>
 
         <div className="flex flex-wrap md:shrink-0 justify-center border-hidden mt-7 border-[1px] border-gray-300 w-[368px] h-full -space-y-28">
-          <div className="flex flex-wrap justify-center w-[352px] h-100 pt-10 border-solid border-[1px] border-gray-300 mb-2 -space-y-32 bg-white">
+          <div className="flex flex-wrap justify-center w-[352px] h-100 pt-10 border-gray-300 mb-2 -space-y-32 bg-white">
             <div className="flex items-center justify-center border-hidden border-2 w-44 h-16 mb-8">
-              <img
-                src="/images/login_images/logo.png"
-                className="mt-2 mb-2"
-              ></img>
+              <h1 className="font-serif text-3xl text-blue-400">Minigram</h1>
             </div>
 
             {error && <p className="mb-2 text-xs text-red-700">{error}</p>}
@@ -97,7 +94,7 @@ const Login = () => {
               </div>
             </form>
           </div>
-          <div className="text-center pt-5 w-[352px] h-16 border-solid border-[1px] border-gray-300 text-sm bg-white">
+          <div className="text-center pt-5 w-[352px] h-16 text-sm bg-white">
             Don't have an account?{" "}
             <Link to={"/signup"} className="text-blue-500 font-semibold">
               Sign up

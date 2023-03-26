@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 
 const Profile = () => {
   useEffect(() => {
-    document.title = "Instagram - profile";
+    document.title = "Minigram - profile";
   }, []);
   return <div>profile</div>;
 };

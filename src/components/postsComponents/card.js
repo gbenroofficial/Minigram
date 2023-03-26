@@ -4,9 +4,10 @@ import CardHeader from "./cardHeader";
 import CardFooter from "./cardFooter";
 import CardMedia from "./cardMedia";
 import { useState } from "react";
+import CardActions from "./cardActions";
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ cardData }) => {
+const Card = ({ cardData, hasUserLiked }) => {
   const [mediaNum, setMediaNum] = useState(0);
   let avatar;
   let timePosted = "1h";
@@ -50,7 +51,12 @@ const Card = ({ cardData }) => {
           onClick={handleLeftClick}
         ></img>
       </div>
-      <div className="w-full h-[146px] border-solid border-[1px] border-gray-300">
+      <CardActions
+        cardId={cardData.cardId}
+        totalLikes={cardData.likedBy.length}
+        likedPhoto={hasUserLiked}
+      />
+      <div className="w-full h-[40px] border-solid border-[1px] border-gray-300">
         <CardFooter userName={userName} caption={caption} />
       </div>
     </div>

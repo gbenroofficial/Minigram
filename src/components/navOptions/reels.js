@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 
 const Reels = () => {
   useEffect(() => {
-    document.title = "Instagram - reels";
+    document.title = "Minigram - reels";
   }, []);
   return <div>Reels</div>;
 };

@@ -7,7 +7,7 @@ import CardDeck from "../postsComponents/cardDeck";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "Instagram - home";
+    document.title = "Minigram - home";
   }, []);
   return (
     <div className="mt-[50px] w-[470px] xl:w-[853px] max-h-screen flex justify-between border-solid border-[0px]">
