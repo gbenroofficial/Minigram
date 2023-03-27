@@ -120,11 +120,6 @@ export async function didUserLikeCard(loggedUserId, cardId) {
   return card.likedBy.includes(loggedUserId);
 }
 
-export async function addComment(loggedUserId, cardId, comment) {
-  const cardRef = doc(db, "cards", cardId);
-  await updateDoc(cardRef, { comments: arrayUnion(comment) });
-}
-
 export async function updateCardLike(loggedUserId, cardId) {
   const cardRef = doc(db, "cards", cardId);
 
@@ -140,4 +135,22 @@ export async function updateCardLike(loggedUserId, cardId) {
       likes: increment(-1),
     });
   }
+}
+
+export async function submitComment(comment, displayName, cardData) {
+  const cardRef = doc(db, "cards", cardData.cardId);
+
+  var newCommentObj = {
+    displayName: displayName,
+    comment: comment,
+  };
+  var dataObj = cardData.comments;
+
+  dataObj.push(newCommentObj);
+  await updateDoc(cardRef, { comments: dataObj });
+
+  /* await updateDoc(cardRef, {
+    comments: arrayUnion({}),
+  }); */
+  console.log(comment);
 }

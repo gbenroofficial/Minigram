@@ -4,7 +4,12 @@ import {} from "firebase/firestore";
 import { useState } from "react";
 import { updateCardLike } from "../../services/firebase";
 
-export default function CardActions({ cardId, totalLikes, likedPhoto }) {
+export default function CardActions({
+  cardId,
+  totalLikes,
+  likedPhoto,
+  handleFocus,
+}) {
   const auth = getAuth();
   const userId = auth.currentUser.uid;
 
@@ -39,7 +44,7 @@ export default function CardActions({ cardId, totalLikes, likedPhoto }) {
             />
           </svg>
           <svg
-            onClick=""
+            onClick={handleFocus}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
                 return;

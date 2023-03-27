@@ -2,8 +2,9 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import AddComment from "./addComment";
 
-const CardComments = ({ comments: allComments }) => {
+const CardComments = ({ cardId, comments: allComments, cardData }) => {
   // eslint-disable-next-line no-unused-vars
   const [comments, setComments] = useState(allComments);
   const [commentsSlice, setCommentsSlice] = useState(3);
@@ -11,6 +12,7 @@ const CardComments = ({ comments: allComments }) => {
   const showNextComments = () => {
     setCommentsSlice(commentsSlice + 3);
   };
+
   return (
     <div>
       <>
@@ -37,8 +39,14 @@ const CardComments = ({ comments: allComments }) => {
               View more comments
             </button>
           )}
-          <p className="text-gray-base uppercase text-xs mt-2">ago</p>
+          {/* <p className="text-gray-base uppercase text-xs mt-2">ago</p> */}
         </div>
+        <AddComment
+          cardId={cardId}
+          comments={comments}
+          setComments={setComments}
+          cardData={cardData}
+        />
       </>
     </div>
   );

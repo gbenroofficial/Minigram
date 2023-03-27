@@ -1,13 +1,17 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import { useRef } from "react";
 import CardHeader from "./cardHeader";
 import CardFooter from "./cardFooter";
 import CardMedia from "./cardMedia";
 import { useState } from "react";
 import CardActions from "./cardActions";
+import CardComments from "./commentSection/cardComments";
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ cardData, hasUserLiked }) => {
+  const commentInput = useRef(null);
+  const handleFocus = () => commentInput.current.focus();
+
   const [mediaNum, setMediaNum] = useState(0);
   let avatar;
   let timePosted = "1h";
@@ -55,10 +59,16 @@ const Card = ({ cardData, hasUserLiked }) => {
         cardId={cardData.cardId}
         totalLikes={cardData.likedBy.length}
         likedPhoto={hasUserLiked}
+        handleFocus={handleFocus}
       />
       <div className="w-full h-[40px] border-solid border-[1px] border-gray-300">
         <CardFooter userName={userName} caption={caption} />
       </div>
+      <CardComments
+        cardId={cardData.cardId}
+        comments={cardData.comments}
+        cardData={cardData}
+      />
     </div>
   );
 };
