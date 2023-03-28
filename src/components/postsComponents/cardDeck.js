@@ -33,6 +33,7 @@ const CardDeck = () => {
       <div className="w-[470px]">
         {cards.map((card) => (
           <Card
+            loggedUser={loggedUser}
             key={card.cardId}
             cardData={card}
             hasUserLiked={card.likedBy.includes(loggedUser.uid)}

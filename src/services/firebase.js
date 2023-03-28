@@ -140,17 +140,7 @@ export async function updateCardLike(loggedUserId, cardId) {
 export async function submitComment(comment, displayName, cardData) {
   const cardRef = doc(db, "cards", cardData.cardId);
 
-  var newCommentObj = {
-    displayName: displayName,
-    comment: comment,
-  };
-  var dataObj = cardData.comments;
-
-  dataObj.push(newCommentObj);
-  await updateDoc(cardRef, { comments: dataObj });
-
-  /* await updateDoc(cardRef, {
-    comments: arrayUnion({}),
-  }); */
-  console.log(comment);
+  await updateDoc(cardRef, {
+    comments: arrayUnion({ displayName: displayName, comment: comment }),
+  });
 }

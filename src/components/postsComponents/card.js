@@ -65,6 +65,7 @@ const Card = ({ cardData, hasUserLiked }) => {
         <CardFooter userName={userName} caption={caption} />
       </div>
       <CardComments
+        commentInput={commentInput}
         cardId={cardData.cardId}
         comments={cardData.comments}
         cardData={cardData}
