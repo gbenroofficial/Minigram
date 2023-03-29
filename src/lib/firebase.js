@@ -25,20 +25,4 @@ const auth = getAuth(firebase);
 // console.log(auth);
 const db = getFirestore(firebase);
 
-/* try {
-  const docRef = addDoc(collection(db, "users"), {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815,
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-} */
-
-//seedData into firebase
-// seedData(db);
-
-// console.log("db", db);
-
 export { auth, firebase, db };

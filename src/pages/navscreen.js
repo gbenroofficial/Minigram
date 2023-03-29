@@ -3,15 +3,11 @@
 import { React, useEffect, useState, useContext } from "react";
 import { useNavigate, Routes, Route } from "react-router-dom";
 import "../styles/app.css";
-import Home from "../components/navOptions/home";
+import Home from "../components/navOptions/home/home";
 import NavBar from "../components/navbar";
 import { logContext } from "../contexts/logStatus";
 import CreateForm from "../components/navOptions/modal/createForm";
-import Explore from "../components/navOptions/explore";
-import Profile from "../components/navOptions/profile";
-import Messages from "../components/navOptions/messages";
-import Reels from "../components/navOptions/reels";
-
+import Profile from "../components/navOptions/profile/profile";
 
 const NavScreen = () => {
   useEffect(() => {
@@ -37,9 +33,6 @@ const NavScreen = () => {
         <div className="max-h-screen z-0 overflow-y-auto hover:overflow-scroll fixed flex justify-center left-0 md:left-16 xl:left-[244px] right-0 w-auto border-solid border-0">
           <Routes>
             <Route path="/*" element={<Home />}></Route>
-            <Route path="/explore" exact element={<Explore />}></Route>
-            <Route path="/reels" exact element={<Reels />}></Route>
-            <Route path="/messages" exact element={<Messages />}></Route>
             <Route path="/profile" exact element={<Profile />}></Route>
           </Routes>
         </div>

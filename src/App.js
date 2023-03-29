@@ -1,11 +1,11 @@
+import { useState, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
-// import NavScreen from "./pages/navscreen";
-import Logger from "./pages/logger";
+const Login = lazy(() => import("./pages/login"));
+const Signup = lazy(() => import("./pages/signup"));
+const Logger = lazy(() => import("./pages/logger"));
+
 import "./styles/app.css";
 import { logContext } from "./contexts/logStatus";
-import { useState } from "react";
 
 // import { onAuthStateChanged, getAuth } from "firebase/auth";
 

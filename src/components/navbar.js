@@ -68,51 +68,6 @@ const NavBar = ({ setCreate }) => {
               </div>
             </NavLink>
 
-            <NavLink to="/explore">
-              <div
-                className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-                href="/explore"
-              >
-                <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
-                  <div className="flex items-center h-6 md:w-full">
-                    <div className="w-6 h-6 xl:mr-4">
-                      <img src="/images/nav_logos/explore.png" />
-                    </div>
-                    <div className="hidden xl:flex h-6">Explore</div>
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink to="/reels">
-              <div
-                className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-                href="/reels"
-              >
-                <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
-                  <div className="flex items-center h-6 md:w-full">
-                    <div className="w-6 h-6 xl:mr-4">
-                      <img src="/images/nav_logos/reels.png" />
-                    </div>
-                    <div className="hidden xl:flex h-6">Reels</div>
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink to="/messages">
-              <div
-                className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
-                href="/messages"
-              >
-                <div className="flex flex-wrap items-center h-12 md:w-12 xl:w-[220px] border-hidden border-[1px] border-gray-300 md:my-2 md:p-3">
-                  <div className="flex items-center h-6 md:w-full">
-                    <div className="w-6 h-6 xl:mr-4">
-                      <img src="/images/nav_logos/messages.png" />
-                    </div>
-                    <div className="hidden xl:flex h-6">Messages</div>
-                  </div>
-                </div>
-              </div>
-            </NavLink>
             <NavLink>
               <div
                 className="hidden md:block md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
