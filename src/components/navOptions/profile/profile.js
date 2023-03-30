@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-
+import ProfileStories from "./profileStories";
 const Profile = () => {
   useEffect(() => {
     document.title = "Minigram - profile";
@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <div>
       <div className="max-w-6xl mx-5 p-10 xl:mx-auto">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-4 ml-24">
           <div className="avatar">
             <div className="w-36 h-36">
               <img
@@ -45,6 +45,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
+        <ProfileStories />
       </div>
     </div>
   );
