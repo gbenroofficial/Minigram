@@ -11,6 +11,8 @@ import CardComments from "./cardComments";
 const Card = ({ cardData, hasUserLiked }) => {
   const commentInput = useRef(null);
   const handleFocus = () => commentInput.current.focus();
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(true);
 
   const [mediaNum, setMediaNum] = useState(0);
   let avatar;
@@ -21,15 +23,17 @@ const Card = ({ cardData, hasUserLiked }) => {
   function handleLeftClick() {
     if (mediaNum != 0) {
       setMediaNum(mediaNum - 1);
+      setShowRight(true);
     } else {
-      setMediaNum(cardData.medias.length - 1);
+      setShowLeft(false);
     }
   }
   function handleRightClick() {
     if (mediaNum != cardData.medias.length - 1) {
       setMediaNum(mediaNum + 1);
+      setShowLeft(true);
     } else {
-      setMediaNum(0);
+      setShowRight(false);
     }
   }
 
@@ -45,14 +49,18 @@ const Card = ({ cardData, hasUserLiked }) => {
       <div className="relative flex flex-wrap items-center w-full h-[584px] border-solid border-[1px] border-gray-300 bg-black rounded-lg">
         <CardMedia src={cardData.medias[mediaNum]} caption="caption" />
         <img
-          className="h-10 absolute top-[290px] right-0 bg-gray-100 opacity-20"
-          src="images/arrowIcons/arrowForward.avif"
-          onClick={handleRightClick}
-        ></img>
-        <img
-          className="h-10 absolute top-[290px] left-0 bg-gray-100 opacity-25"
+          className={`rounded-full h-10 absolute top-[290px] left-0 bg-gray-100 opacity-25 cursor-pointer ${
+            showLeft ? "visible" : "invisible"
+          }`}
           src="images/arrowIcons/arrowBack.avif"
           onClick={handleLeftClick}
+        ></img>
+        <img
+          className={`rounded-full h-10 absolute top-[290px] right-0 bg-gray-100 opacity-20 cursor-pointer ${
+            showRight ? "visible" : "invisible"
+          }`}
+          src="images/arrowIcons/arrowForward.avif"
+          onClick={handleRightClick}
         ></img>
       </div>
       <CardActions

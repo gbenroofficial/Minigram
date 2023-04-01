@@ -144,3 +144,17 @@ export async function submitComment(comment, displayName, cardData) {
     comments: arrayUnion({ displayName: displayName, comment: comment }),
   });
 }
+
+export async function getUserCards(ownerId) {
+  let cards = [];
+  const q = query(collection(db, "cards"), where("ownerId", "==", ownerId));
+  const results = await getDocs(q);
+
+  results.forEach((docSnap) => {
+    //foreach method helps iterate through each document snapshot
+    cards.push(docSnap.data()); // .data() converts each docSnapshot to an object
+  });
+
+  // console.log(cards);
+  return cards;
+}

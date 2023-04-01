@@ -30,7 +30,7 @@ const NavScreen = () => {
   return (
     <>
       <div className="h-screen block w-vw border-solid border-[0px]">
-        <div className="max-h-screen z-0 overflow-y-auto hover:overflow-scroll fixed flex justify-center left-0 md:left-16 xl:left-[244px] right-0 w-auto border-solid border-0">
+        <div className="h-screen scrollbar-hide z-0 overflow-y-auto hover:overflow-scroll fixed flex justify-center left-0 md:left-16 xl:left-[244px] right-0 w-auto border-solid border-0">
           <Routes>
             <Route path="/*" element={<Home />}></Route>
             <Route path="/profile" exact element={<Profile />}></Route>
