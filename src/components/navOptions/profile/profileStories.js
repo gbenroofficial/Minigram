@@ -24,7 +24,7 @@ const ProfileStories = () => {
     }
   };
   return (
-    <div className="ml-10 w-4/5">
+    <div className="relative w-4/5">
       <div
         onScroll={onScroll}
         ref={scrollRef}
@@ -38,7 +38,7 @@ const ProfileStories = () => {
           />
         ))}
       </div>
-      <div className="absolute top-0 p-4 w-full h-full flex justify-between z-10 items-center">
+      <div className="absolute top-0 p-5 w-full h-full flex justify-between z-10 items-center">
         <img
           className={`rounded-full h-10 absolute left-0 bg-gray-100 opacity-25 cursor-pointer ${
             showLeft ? "visible" : "invisible"

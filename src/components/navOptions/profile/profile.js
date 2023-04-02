@@ -24,13 +24,13 @@ const Profile = () => {
   if (userCards) {
     return (
       <div>
-        <div className="max-w-6xl mx-5 p-10 xl:mx-auto h-screen">
-          <div className="grid grid-cols-4 gap-4 ml-24">
-            <div className="avatar">
+        <div className="w-[550px] sm:w-[700px] md:w-[1000px] lg:[1300px] md:mx-5 p-10 xl:mx-auto h-screen">
+          <div className="flex flex-wrap justify-center md:grid sm:grid-cols-3 md:grid-cols-4 md:gap-4 md:ml-24">
+            <div className="mr-10 avatar">
               <div className="w-36 h-36">
                 <img
                   src="images/testimages/esteemedTeddy.jpeg"
-                  className="rounded-full"
+                  className="rounded-full md:ml-14"
                 />
               </div>
             </div>
@@ -39,7 +39,7 @@ const Profile = () => {
               <div className="cursor-pointer inline text-sm text-gray-700 font-semibold  p-1 px-2 border border-gray-200  rounded mr-4">
                 Edit Profile
               </div>
-              <div className="col-span-3  mt-4 flex">
+              <div className="sm:col-span-2 md:col-span-3  mt-4 flex">
                 <div>
                   <span className="font-semibold">200</span> posts
                 </div>
@@ -63,9 +63,12 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <ProfileStories />
-          <hr className="border-gray-500 mt-6" />
-          <ProfileCardDeck userCards={userCards} />
+
+          <div className="flex flex-wrap w-full justify-center">
+            <ProfileStories />
+            <hr className="border-gray-500 mt-6 w-4/5" />
+            <ProfileCardDeck userCards={userCards} />
+          </div>
         </div>
       </div>
     );
