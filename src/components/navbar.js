@@ -101,7 +101,7 @@ const NavBar = ({ setCreate }) => {
               </div>
             </NavLink>
 
-            <NavLink to="/profile">
+            <NavLink to="/selfProfile">
               <div
                 className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
                 href="/profile"

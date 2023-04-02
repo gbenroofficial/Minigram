@@ -7,7 +7,7 @@ import Home from "../components/navOptions/home/home";
 import NavBar from "../components/navbar";
 import { logContext } from "../contexts/logStatus";
 import CreateForm from "../components/navOptions/modal/createForm";
-import Profile from "../components/navOptions/profile/profile";
+import SelfProfile from "../components/navOptions/selfProfile";
 
 const NavScreen = () => {
   useEffect(() => {
@@ -33,7 +33,7 @@ const NavScreen = () => {
         <div className="h-screen scrollbar-hide z-0 overflow-y-auto hover:overflow-scroll fixed flex justify-center left-0 md:left-16 xl:left-[244px] right-0 w-auto border-solid border-0">
           <Routes>
             <Route path="/*" element={<Home />}></Route>
-            <Route path="/profile" exact element={<Profile />}></Route>
+            <Route path="/selfProfile" exact element={<SelfProfile />}></Route>
           </Routes>
         </div>
         <NavBar setCreate={setCreate} />

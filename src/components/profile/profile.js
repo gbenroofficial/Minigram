@@ -1,14 +1,13 @@
+/* eslint-disable react/prop-types */
 import { React, useEffect, useState } from "react";
 import ProfileStories from "./profileStories";
 import ProfileCardDeck from "./profileCardDeck";
-import { getUserCards } from "../../../services/firebase";
-import { getAuth } from "firebase/auth";
+import { getUserCards } from "../../services/firebase";
 
-const Profile = () => {
+const Profile = ({ id }) => {
   const [userCards, setUserCards] = useState();
-  const auth = getAuth();
 
-  const userId = auth.currentUser.uid;
+  const userId = id;
 
   useEffect(() => {
     document.title = "Minigram - profile";
