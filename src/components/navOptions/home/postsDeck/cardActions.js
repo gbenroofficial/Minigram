@@ -32,7 +32,7 @@ export default function CardActions({
             viewBox="0 0 24 24"
             stroke="currentColor"
             tabIndex={0}
-            className={`w-7 mr-4 select-none cursor-pointer focus:outline-none ${
+            className={`w-6 mr-4 select-none cursor-pointer focus:outline-none ${
               toggleLiked ? "fill-red-700" : ""
             }`}
           >
@@ -50,7 +50,7 @@ export default function CardActions({
                 return;
               }
             }}
-            className="w-7 text-black-light select-none cursor-pointer focus:outline-none"
+            className="w-6 text-black-light select-none cursor-pointer focus:outline-none"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

@@ -43,7 +43,7 @@ const ProfileStories = () => {
           className={`rounded-full h-10 absolute left-0 bg-gray-100 opacity-25 cursor-pointer ${
             showLeft ? "visible" : "invisible"
           }`}
-          src="images/arrowIcons/arrowBack.avif"
+          src="../images/arrowIcons/arrowBack.avif"
           onClick={() => {
             scrollRef.current.scrollLeft = scrollRef.current.scrollLeft - 100;
           }}
@@ -52,7 +52,7 @@ const ProfileStories = () => {
           className={`rounded-full h-10 absolute right-0 bg-gray-100 opacity-25 cursor-pointer ${
             showRight ? "visible" : "invisible"
           }`}
-          src="images/arrowIcons/arrowForward.avif"
+          src="../images/arrowIcons/arrowForward.avif"
           onClick={() => {
             scrollRef.current.scrollLeft = scrollRef.current.scrollLeft + 100;
           }}

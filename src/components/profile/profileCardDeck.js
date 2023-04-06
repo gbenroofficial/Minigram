@@ -3,7 +3,6 @@
 import { React } from "react";
 
 const ProfileCardDeck = ({ userCards }) => {
-  console.log(userCards);
   if (userCards) {
     return (
       <div className="w-4/5">

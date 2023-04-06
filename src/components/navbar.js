@@ -8,6 +8,7 @@ import "../styles/app.css";
 // eslint-disable-next-line react/prop-types
 const NavBar = ({ setCreate }) => {
   const auth = getAuth();
+  const id = auth.currentUser.uid;
   const [, setValue] = useContext(logContext); //is it logged in?
   const [isOpen, setIsOpen] = useState(false); //open create modal?
 
@@ -101,7 +102,7 @@ const NavBar = ({ setCreate }) => {
               </div>
             </NavLink>
 
-            <NavLink to="/selfProfile">
+            <NavLink to={`/Profile/${id}`}>
               <div
                 className="md:hover:bg-gray-100 h-12 md:w-12 xl:w-[220px] md:rounded-full"
                 href="/profile"
