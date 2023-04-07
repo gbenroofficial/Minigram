@@ -3,7 +3,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      flexShrink: {
+        2: "2",
+      },
+    },
   },
   plugins: [
     require("tailwind-scroll-behavior")(),

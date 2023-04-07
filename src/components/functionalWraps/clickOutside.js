@@ -15,6 +15,7 @@ export const ClickOutside = ({
       document.removeEventListener("mousedown", handleClick); //clean up on unmount
     };
   }, []); //[]= no updates for render
+  const wrapRef = useRef();
 
   const handleClick = (event) => {
     let clickedInside;
@@ -31,7 +32,6 @@ export const ClickOutside = ({
     onClick();
   };
 
-  const wrapRef = useRef();
   return (
     <div ref={wrapRef} className={`${className || ""}`}>
       {children}

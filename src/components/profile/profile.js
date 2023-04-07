@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 const Profile = () => {
   const [userCards, setUserCards] = useState();
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const Profile = () => {
                 />
               </div>
             </div>
-            <div className="col-span-2 ">
+            <div className="col-span-2">
               <span className=" text-gray-700 text-2xl mr-4">DannyBoy</span>
               <div className="cursor-pointer inline text-sm text-gray-700 font-semibold  p-1 px-2 border border-gray-200  rounded mr-4">
                 Edit Profile
@@ -65,7 +66,8 @@ const Profile = () => {
 
           <div className="flex flex-wrap w-full justify-center">
             <ProfileStories />
-            <hr className="border-gray-500 mt-6 w-4/5" />
+            <hr className="border-gray-500 mt-6 w-4/5 mb-1" />
+
             <ProfileCardDeck userCards={userCards} />
           </div>
         </div>

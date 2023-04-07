@@ -8,12 +8,15 @@ import NavBar from "../components/navbar";
 import { logContext } from "../contexts/logStatus";
 import CreateForm from "../components/navOptions/modal/createForm";
 import Profile from "../components/profile/profile";
+import { profileContext } from "../contexts/profileContext";
 
 const NavScreen = () => {
   useEffect(() => {
     document.title = "Minigram";
   }, []);
   const [loggedVal, ,] = useContext(logContext);
+  const [IsShowBig, setIsShowBig] = useState(false);
+
   const navigate = useNavigate();
 
   if (loggedVal == false) {
@@ -29,14 +32,30 @@ const NavScreen = () => {
 
   return (
     <>
-      <div className="h-screen block w-vw border-solid border-[0px]">
+      <div className="relative h-screen block w-vw border-solid border-[0px]">
         <div className="h-screen scrollbar-hide z-0 overflow-y-auto hover:overflow-scroll fixed flex justify-center left-0 md:left-16 xl:left-[244px] right-0 w-auto border-solid border-0">
+          <NavBar setCreate={setCreate} />
           <Routes>
-            <Route path="/*" element={<Home />}></Route>
-            <Route path="/Profile/:id" exact element={<Profile />}></Route>
+            <Route
+              path="/*"
+              element={
+                <profileContext.Provider value={[IsShowBig, setIsShowBig]}>
+                  <Home />
+                </profileContext.Provider>
+              }
+            ></Route>
+            <Route
+              path="/Profile/:id"
+              exact
+              element={
+                <profileContext.Provider value={[IsShowBig, setIsShowBig]}>
+                  <Profile />
+                </profileContext.Provider>
+              }
+            ></Route>
           </Routes>
         </div>
-        <NavBar setCreate={setCreate} />
+
         {isCreate && <CreateForm setCreate={setCreate} />}
       </div>
     </>

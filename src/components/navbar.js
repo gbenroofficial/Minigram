@@ -25,7 +25,7 @@ const NavBar = ({ setCreate }) => {
   // console.log(value);
 
   return (
-    <div className="z-20 bg-white border-t-2 fixed bottom-0 inset-x-0 w-full flex flex-wrap justify-items-stretch md:block md:left-0 md:inset-y-0 md:w-16 xl:w-[244px] h-[48px] md:h-screen border-solid md:border-r-2 md:border-y-0">
+    <div className="z-10 bg-white border-t-2 fixed bottom-0 inset-x-0 w-full flex flex-wrap justify-items-stretch md:block md:left-0 md:inset-y-0 md:w-16 xl:w-[244px] h-[48px] md:h-screen border-solid md:border-r-2 md:border-y-0">
       <div className="w-full h-48 flex flex-wrap justify-items-center md:block md:h-screen md:w-12 xl:w-[244px]">
         <div className="h-48 md:h-[692px] w-full md:w-12 xl:w-[244px] flex flex-wrap md:p-2 border-hidden border-[1px] border-gray-300">
           <div className="hidden md:flex h-18-24 w-12 xl:w-[220px] mb-[19.04px] pb-4 pl-3 pt-[24.96px] border-hidden border-[1px] border-gray-300">

@@ -4,7 +4,7 @@ import React from "react";
 const CardMedia = ({ src, caption }) => {
   const ext = src.split(".").pop();
   let isImage;
-  if (ext == "jpg" || ext == "png") {
+  if (ext == "jpg" || ext == "png" || ext == "jpeg") {
     isImage = true;
     // console.log(isImage);
   } else {
@@ -13,7 +13,7 @@ const CardMedia = ({ src, caption }) => {
   return (
     <div className="">
       {isImage ? (
-        <img src={src} alt={caption} />
+        <img src={src} alt={caption} className="object-cover" />
       ) : (
         <video className="z-10" src={src} alt={caption} controls></video>
       )}

@@ -498,20 +498,26 @@ video {
 .right-0 {
   right: 0px;
 }
-.top-0 {
-  top: 0px;
-}
 .top-\[290px\] {
   top: 290px;
 }
-.z-20 {
-  z-index: 20;
+.top-0 {
+  top: 0px;
+}
+.z-10 {
+  z-index: 10;
 }
 .z-0 {
   z-index: 0;
 }
-.z-10 {
-  z-index: 10;
+.z-30 {
+  z-index: 30;
+}
+.z-20 {
+  z-index: 20;
+}
+.z-50 {
+  z-index: 50;
 }
 .col-span-2 {
   grid-column: span 2 / span 2;
@@ -571,8 +577,11 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mt-\[50px\] {
-  margin-top: 50px;
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mt-\[30px\] {
+  margin-top: 30px;
 }
 .mt-\[15px\] {
   margin-top: 15px;
@@ -583,14 +592,11 @@ video {
 .mb-\[60px\] {
   margin-bottom: 60px;
 }
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
 .mr-1 {
   margin-right: 0.25rem;
 }
-.mt-\[100px\] {
-  margin-top: 100px;
+.mt-\[80px\] {
+  margin-top: 80px;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -685,6 +691,9 @@ video {
 .h-36 {
   height: 9rem;
 }
+.h-\[700px\] {
+  height: 700px;
+}
 .h-\[70px\] {
   height: 70px;
 }
@@ -771,6 +780,12 @@ video {
 }
 .w-4\/5 {
   width: 80%;
+}
+.w-\[1000px\] {
+  width: 1000px;
+}
+.w-\[500px\] {
+  width: 500px;
 }
 .w-\[70px\] {
   width: 70px;
@@ -987,6 +1002,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
+.bg-black\/60 {
+  background-color: rgb(0 0 0 / 0.6);
+}
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -995,15 +1013,15 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.bg-black\/60 {
-  background-color: rgb(0 0 0 / 0.6);
-}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 .fill-red-700 {
   fill: #b91c1c;
+}
+.object-cover {
+  object-fit: cover;
 }
 .object-fill {
   object-fit: fill;
@@ -1346,8 +1364,16 @@ video {
     width: 1000px;
   }
 
+  .md\:flex-shrink {
+    flex-shrink: 1;
+  }
+
   .md\:shrink-0 {
     flex-shrink: 0;
+  }
+
+  .md\:flex-grow {
+    flex-grow: 1;
   }
 
   .md\:grid-cols-4 {
@@ -1400,6 +1426,10 @@ video {
 
   .lg\:w-\[597px\] {
     width: 597px;
+  }
+
+  .lg\:max-w-\[1100px\] {
+    max-width: 1100px;
   }
 }
 @media (min-width: 1280px) {

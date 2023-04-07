@@ -32,7 +32,7 @@ const Suggestions = () => {
   const user = auth.currentUser;
   if (profiles) {
     return (
-      <div className="w-[319px] h-screen  mt-[100px]">
+      <div className="w-[319px] h-screen  mt-[80px]">
         <div className="rounded flex flex-col">
           <div className="text-sm flex items-center align-items justify-between mb-2">
             <p className="font-semibold text-gray-400">Suggestions for you</p>

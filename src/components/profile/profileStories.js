@@ -28,7 +28,7 @@ const ProfileStories = () => {
       <div
         onScroll={onScroll}
         ref={scrollRef}
-        className="flex space-x-6 overflow-x-scroll w-full  border-gray-200 p-4 scroll-smooth scrollbar-hide"
+        className="flex space-x-6 overflow-x-scroll w-full border-gray-200 p-4 scroll-smooth scrollbar-hide"
       >
         {profilestories.map((story) => (
           <ProfileStory
@@ -40,7 +40,7 @@ const ProfileStories = () => {
       </div>
       <div className="absolute top-0 p-5 w-full h-full flex justify-between z-10 items-center">
         <img
-          className={`rounded-full h-10 absolute left-0 bg-gray-100 opacity-25 cursor-pointer ${
+          className={`rounded-full h-10 absolute left-0 bg-gray-100 opacity-50 cursor-pointer ${
             showLeft ? "visible" : "invisible"
           }`}
           src="../images/arrowIcons/arrowBack.avif"
@@ -49,7 +49,7 @@ const ProfileStories = () => {
           }}
         ></img>
         <img
-          className={`rounded-full h-10 absolute right-0 bg-gray-100 opacity-25 cursor-pointer ${
+          className={`rounded-full h-10 absolute right-0 bg-gray-100 opacity-50 cursor-pointer ${
             showRight ? "visible" : "invisible"
           }`}
           src="../images/arrowIcons/arrowForward.avif"

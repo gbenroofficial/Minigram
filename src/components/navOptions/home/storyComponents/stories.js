@@ -40,7 +40,7 @@ const Stories = () => {
       </div>
       <div className="absolute top-0 p-5 w-full h-full flex justify-between z-10 items-center">
         <img
-          className={`rounded-full h-10 absolute left-0 bg-gray-100 opacity-25 cursor-pointer ${
+          className={`rounded-full h-10 absolute left-0 bg-gray-100 opacity-50 cursor-pointer ${
             showLeft ? "visible" : "invisible"
           }`}
           src="images/arrowIcons/arrowBack.avif"
@@ -49,7 +49,7 @@ const Stories = () => {
           }}
         ></img>
         <img
-          className={`rounded-full h-10 absolute right-0 bg-gray-100 opacity-25 cursor-pointer ${
+          className={`rounded-full h-10 absolute right-0 bg-gray-100 opacity-50 cursor-pointer ${
             showRight ? "visible" : "invisible"
           }`}
           src="images/arrowIcons/arrowForward.avif"

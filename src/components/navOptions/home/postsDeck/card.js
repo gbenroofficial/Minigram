@@ -21,19 +21,21 @@ const Card = ({ cardData, hasUserLiked }) => {
   let caption = cardData.caption;
 
   function handleLeftClick() {
+    setShowRight(true);
     if (mediaNum != 0) {
       setMediaNum(mediaNum - 1);
-      setShowRight(true);
-    } else {
-      setShowLeft(false);
+      if (mediaNum == 1) {
+        setShowLeft(false);
+      }
     }
   }
   function handleRightClick() {
+    setShowLeft(true);
     if (mediaNum != cardData.medias.length - 1) {
       setMediaNum(mediaNum + 1);
-      setShowLeft(true);
-    } else {
-      setShowRight(false);
+      if (mediaNum == cardData.medias.length - 2) {
+        setShowRight(false);
+      }
     }
   }
 
