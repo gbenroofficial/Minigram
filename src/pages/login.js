@@ -47,7 +47,7 @@ const Login = () => {
   }
   return (
     <div className="relative w-vw items-center h-screen">
-      <div className="flex absolute inset-0 justify-center pb-10 pt-4 w-vw border-solid border-gray-100 h-[692px] mr-14 mt-44">
+      <div className="flex absolute inset-0 justify-center pb-10 w-vw border-solid border-gray-100 h-[692px] mr-14 mt-[100px]">
         <div className="hidden md:flex flex-none w-[368px] h-[385px] mt-7">
           <img src="/images/login_images/fancyBear.jpeg" />
         </div>

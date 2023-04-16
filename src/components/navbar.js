@@ -127,10 +127,10 @@ const NavBar = ({ setCreate }) => {
             <div className="md:flex w-6 h-6 xl:mr-4">
               <img src="/images/nav_logos/more.png" />
             </div>
-            <div className="hidden xl:flex h-6">More</div>
+            <div className="hidden xl:flex h-6 cursor-pointer">More</div>
             {isOpen && (
               <div className="absolute -top-[320px] w-[250px] -ml-[2px] h-[400] bg-white grid grid-rows-6 justify-items-center place-content-evenly">
-                <div className="w-[250px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle">
+                <div className="w-[270px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle">
                   Settings
                 </div>
                 <div className="w-[270px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle">
@@ -149,7 +149,7 @@ const NavBar = ({ setCreate }) => {
                   Switch accounts
                 </div>
                 <div
-                  className="w-[270px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle"
+                  className="w-[270px] h-[44px] border-solid border-[1px] pl-2 border-gray-300 align-middle cursor-pointer"
                   onClick={handleLogOut}
                 >
                   Log out

@@ -504,14 +504,14 @@ video {
 .top-0 {
   top: 0px;
 }
+.top-5 {
+  top: 1.25rem;
+}
 .z-10 {
   z-index: 10;
 }
 .z-0 {
   z-index: 0;
-}
-.z-30 {
-  z-index: 30;
 }
 .z-20 {
   z-index: 20;
@@ -544,8 +544,8 @@ video {
 .mr-14 {
   margin-right: 3.5rem;
 }
-.mt-44 {
-  margin-top: 11rem;
+.mt-\[100px\] {
+  margin-top: 100px;
 }
 .mt-7 {
   margin-top: 1.75rem;
@@ -594,6 +594,9 @@ video {
 }
 .mr-1 {
   margin-right: 0.25rem;
+}
+.ml-0 {
+  margin-left: 0px;
 }
 .mt-\[80px\] {
   margin-top: 80px;
@@ -730,6 +733,18 @@ video {
 .h-\[50px\] {
   height: 50px;
 }
+.h-\[360px\] {
+  height: 360px;
+}
+.h-\[720px\] {
+  height: 720px;
+}
+.h-60 {
+  height: 15rem;
+}
+.h-\[px\] {
+  height: px;
+}
 .max-h-screen {
   max-height: 100vh;
 }
@@ -820,6 +835,12 @@ video {
 .w-\[50px\] {
   width: 50px;
 }
+.w-\[200px\] {
+  width: 200px;
+}
+.w-\[400px\] {
+  width: 400px;
+}
 .flex-none {
   flex: none;
 }
@@ -896,6 +917,16 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .self-end {
   align-self: flex-end;
@@ -982,6 +1013,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1016,6 +1051,14 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 .fill-red-700 {
   fill: #b91c1c;
@@ -1088,9 +1131,6 @@ video {
 }
 .pb-10 {
   padding-bottom: 2.5rem;
-}
-.pt-4 {
-  padding-top: 1rem;
 }
 .pt-10 {
   padding-top: 2.5rem;
@@ -1426,10 +1466,6 @@ video {
 
   .lg\:w-\[597px\] {
     width: 597px;
-  }
-
-  .lg\:max-w-\[1100px\] {
-    max-width: 1100px;
   }
 }
 @media (min-width: 1280px) {

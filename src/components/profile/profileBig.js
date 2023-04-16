@@ -44,7 +44,7 @@ const ProfileBig = ({ card, setShow }) => {
         }}
         className="items-center flex justify-center"
       >
-        <div className="relative justify-center flex h-[700px] w-[1000px] border-0 border-gray-400 border-solid">
+        <div className="relative justify-center flex h-[700px] w-[1000px] border-2 border-white border-solid">
           <div className="hidden md:flex md:flex-grow md:flex-shrink">
             <CardMedia src={photos[num]} />
           </div>
