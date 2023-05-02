@@ -2,7 +2,12 @@
 import React from "react";
 import { ClickOutside } from "../../../functionalWraps/clickOutside";
 import CardMedia from "../postsDeck/cardMedia";
+import Stories from "react-insta-stories";
 const StoryView = ({ showStory }) => {
+  const stories = [
+    "../../../../images/testImages/mrTeddy1.jpeg",
+    "../../../../images/testImages/mrTeddy2.jpeg",
+  ];
   return (
     <div className="flex justify-center items-center fixed inset-0 bg-black/60 z-20">
       <ClickOutside
@@ -22,10 +27,7 @@ const StoryView = ({ showStory }) => {
           />
         </div>
         <div className="w-[400px] h-[720px] border-white border-2 text-white flex justify-center items-center">
-          <CardMedia
-            src="../../../../images/testImages/meee.jpg"
-            fit="object-fit"
-          />
+          <Stories stories={stories} />
         </div>
         <div className="w-[200px] h-[360px] border-white border-2 text-white flex justify-center items-center">
           <CardMedia
