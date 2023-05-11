@@ -6,7 +6,7 @@ import Stories from "react-insta-stories";
 const StoryView = ({ showStory }) => {
   const stories = [
     "../../../../images/testImages/mrTeddy1.jpeg",
-    "../../../../images/testImages/mrTeddy2.jpeg",
+    "../../../../videos/storyVids/8.mp4",
   ];
   return (
     <div className="flex justify-center items-center fixed inset-0 bg-black/60 z-20">
